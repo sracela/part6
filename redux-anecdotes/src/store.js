@@ -13,6 +13,13 @@ const reducer = combineReducers({
 const store = createStore(
     reducer,
     composeWithDevTools()
-  )
+)
+
+// store.subscribe(() => console.log(store.getState()))
+// store.dispatch(setNotification('Hola hola'))
+
+// setTimeout(() => {
+//     store.dispatch(deleteNotification())
+//   }, 5000)
 
 export default store
