@@ -19,16 +19,16 @@ const Anecdote = ({ anecdote, handleClick }) => {
 
 const onVote = (dispatch, anecdote) => { 
 
-  dispatch(voteTo(anecdote.id))
-  dispatch(setNotification(`You voted "${anecdote.content}"`))
-  setTimeout(() => {
-      dispatch(deleteNotification())
-    }, 5000)
+  dispatch(voteTo(anecdote))
+  dispatch(setNotification(`You voted '${anecdote.content}'`, 5))
+  // dispatch(setNotification(`You voted "${anecdote.content}"`))
+  // setTimeout(() => {
+  //     dispatch(deleteNotification())
+  //   }, 5000)
 }
 
 const AnecdoteList = () => {
   const dispatch = useDispatch() 
-  // const anecdotes = useSelector(state => state.anecdotes)
   const anecdotes = useSelector(({ filter, anecdotes }) => {
     if ( filter === '' ) {
       return anecdotes
