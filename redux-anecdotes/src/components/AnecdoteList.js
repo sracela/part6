@@ -18,37 +18,14 @@ const Anecdote = ({ anecdote, handleClick }) => {
   )
 }
 
-// const onVote = (dispatch, anecdote) => { 
-
-//   dispatch(voteTo(anecdote))
-//   dispatch(setNotification(`You voted '${anecdote.content}'`, 5))
-//   // dispatch(setNotification(`You voted "${anecdote.content}"`))
-//   // setTimeout(() => {
-//   //     dispatch(deleteNotification())
-//   //   }, 5000)
-// }
 
 const AnecdoteList = ( props ) => {
-  const dispatch = useDispatch() 
-  // const anecdotes = useSelector(({ filter, anecdotes }) => {
-  //   if ( filter === '' ) {
-  //     return anecdotes
-  //   }
-  //   return anecdotes.filter((anecdote) => anecdote.content.toLowerCase().includes(filter.toLowerCase()))
-  // })
 
   const onVote = (anecdote) => { 
     props.voteTo(anecdote)
     props.setNotification(`You voted '${anecdote.content}'`, 5)
   }
-  
 
-  // const anecdotesToShow =  () => {
-  //   if (props.filter === '') {
-  //     return props.anecdotes
-  //   }
-  //   return props.anecdotes.filter((anecdote) => anecdote.content.toLowerCase().includes(props.filter.toLowerCase()))
-  // }
   return(
     <ul>
       {/* {anecdotes.sort((a,b) => b.votes - a.votes).map(anecdote => */}
@@ -63,7 +40,6 @@ const AnecdoteList = ( props ) => {
   )
 }
 
-// export default AnecdoteList
 
 
 const mapStateToProps = (state) => {

@@ -11,21 +11,30 @@ const notificationReducer = (state = initialState, action) => {
     }
   }
 
-function timeout(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
 
+// function timeout(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms))
+// }
+
+
+var timeoutID;
 export const setNotification = (notification, time) => {
+
+  clearTimeout(timeoutID)
   return async dispatch => {
     dispatch({
       type: 'SET_NOTIFICATION',
       notification,
     })
-    await timeout(time*1000)
-    dispatch({
+    timeoutID = setTimeout( () =>   dispatch({
       type: 'DELETE_NOTIFICATION',
       notification,
-    })
+    }), time*1000);
+    // await timeout(time*1000)
+    // dispatch({
+    //   type: 'DELETE_NOTIFICATION',
+    //   notification,
+    // })
   }
 }
 
