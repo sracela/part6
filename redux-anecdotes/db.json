@@ -3,7 +3,7 @@
     {
       "content": "If it hurts, do it more often",
       "id": "47145",
-      "votes": 10
+      "votes": 11
     },
     {
       "content": "Adding manpower to a late software project makes it later!",
@@ -52,7 +52,7 @@
     },
     {
       "content": "asdsdadadasdda",
-      "votes": 0,
+      "votes": 1,
       "id": "Kp25E4E"
     },
     {
@@ -67,8 +67,13 @@
     },
     {
       "content": "dsadada",
-      "votes": 0,
+      "votes": 1,
       "id": "GB3XILj"
+    },
+    {
+      "content": "prueba del redux con connect",
+      "votes": 1,
+      "id": "OwzDtk8"
     }
   ]
 }
